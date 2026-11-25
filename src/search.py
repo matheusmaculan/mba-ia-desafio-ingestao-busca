@@ -84,7 +84,7 @@ def search_prompt(question: str):
     llm = ChatGoogleGenerativeAI(
         model=os.getenv("GOOGLE_LLM_MODEL", "gemini-3.5-flash-lite"),
         temperature=0,
-        request_timeout=30,
+        timeout=30,
     )
 
     resposta = llm.invoke(prompt)
